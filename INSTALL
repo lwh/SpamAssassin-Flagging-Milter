@@ -1,10 +1,10 @@
 To install this milter:
 
 Install SpamAssassin and get spamd running. See http://spamassassin.apache.org/
+Install Sendmail and its source code. 
 
 Check the Makefile, the CFLAGS for sendmail's include files may have to be
 changed.
-
 
 Edit the source and set the options at the top, these three mainly:
 
@@ -26,6 +26,6 @@ INPUT_MAIL_FILTER(`milter-spamd-flagger',`S=unix:/var/spool/milter-spamd/sock, T
 That's it. Mail will have an X-Spam header in it that says Yes/No
 
 
-Tested on FreeBSD 4.8 and 6.0. If you get it working on others please
-email me , particularily if you have patches or rc scripts. Thanks
-lwh@pathcom.com
+Tested on FreeBSD 4.8,6.x,7.x. If you get it working on others please
+email me or send PR via github, particularily if you have patches or rc scripts.
+

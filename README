@@ -1,0 +1,7 @@
+
+This is a milter for Sendmail that uses Spamassassin and flags mail as spam or not.
+It's a modified version of milter-spamd http://www.benzedrine.ch/milter-spamd.html.
+Source is here: https://github.com/lwh/SpamAssassin-Flagging-Milter
+
+WARNING - this is old and may not work anymore. I switched to Spamass-Milter from here:
+http://savannah.nongnu.org/projects/spamass-milt/

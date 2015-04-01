@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.1.1.1 2004/04/03 20:27:00 dhartmei Exp $
+# This will only build on BSD
 
 PROG=	milter-spamd-flagger
 SRCS=	milter-spamd-flagger.c

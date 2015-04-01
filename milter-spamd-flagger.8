@@ -1,11 +1,7 @@
-.\" $Id: milter-spamd.8,v 1.4 2004/04/05 19:21:53 dhartmei Exp $ */
-.\"
-.\" This copy has been modified by Luke Hollins it does not do the same
-.\" thing as milter-spamd. Please see the source.
-.\"
-.\"
+.\" $Id: milter-spamd-flagger.8,v 1.4 2015/04/01 12:11:53 lwh Exp $ */
 .\"
 .\" Copyright (c) 2004 Daniel Hartmeier
+.\" Copyright (c) 2005-2015 Luke Hollins
 .\" All rights reserved.
 .\"
 .\" Redistribution and use in source and binary forms, with or without
@@ -33,7 +29,7 @@
 .\" POSSIBILITY OF SUCH DAMAGE.
 .\"
 .Dd August 24, 2005
-.Dt MILTER-SPAMD 8
+.Dt MILTER-SPAMD-FLAGGER 8
 .Os
 .Sh NAME
 .Nm milter-spamd-flagger
@@ -66,7 +62,7 @@ The argument is a case-insensitive extended regular expression
 -i).
 Example:
 .Bd -literal -offset indent
-# milter-spamd -i '(^127\\.|^10\\.1\\.|\\.benzedrine\\.cx$)'
+# milter-spamd-flagger -i '(^127\\.|^10\\.1\\.|\\.benzedrine\\.cx$)'
 .Ed
 .Pp
 would skip filtering for senders whose host names end
@@ -120,7 +116,7 @@ The following
 .Xr syslog.conf 5
 section can be used to log messages to a dedicated file:
 .Bd -literal
-!milter-spamd
+!milter-spamd-flagger
 daemon.err;daemon.notice	/var/log/milter-spamd
 .Ed
 .Sh SEE ALSO
@@ -148,8 +144,8 @@ daemon.err;daemon.notice	/var/log/milter-spamd
 .%O http://www.sendmail.org/
 .Re
 .Rs
-.%T Homepage for this program: 
-.%O http://miltersf.sf.net/
+.%T Homepage for this version: 
+.%O https://github.com/lwh/SpamAssassin-Flagging-Milter
 .Re
 .Rs
 .%T Original milter-spamd which this is based on:
@@ -165,4 +161,4 @@ Daniel Hartmeier
 .Aq daniel@benzedrine.cx
 .LP
 Modified by Luke Hollins
-.Aq lwh@pathcom.com
+.Aq luke@farcry.ca

@@ -1,26 +1,6 @@
-static const char rcsid[] = "milter-spamd-flagger 0.1 2005/06/10 16:01:45 lwh";
-
-/* Modified by Luke Hollins from milter-spamd.c 
- *
- * - Changed the filter to accept all mail and put the
- * Spamassassin flag in the header as X-Spam 
- * - Made SPAMD_RETRIES a define here, it was 6 before (6*10 seconds) 
- * - Added a check to remove any X-Spam-Flag headers
- * - Removed AF_INET6 support
- * - Added MAX_MESSAGE_SIZE 
-*/
-/* Things to set */
-#define USER		"_milter-spamd"
-#define OCONN		"unix:/var/spool/milter-spamd/sock"
-#define PIDFILE	"/var/spool/milter-spamd/pid"
-/* these are the Spamassassin defaults */
-#define SPAMD_ADDR	"127.0.0.1"
-#define SPAMD_PORT	783
-/* this is 30 seconds */
-#define SPAMD_RETRIES 3
-#define MAX_MESSAGE_SIZE 327680
-
+static const char rcsid[] = "milter-spamd-flagger 0.1 2015/04/01 12:01:45 lwh";
 /*
+ *
  * Copyright (c) 2004 Daniel Hartmeier
  * All rights reserved.
  *
@@ -48,8 +28,26 @@ static const char rcsid[] = "milter-spamd-flagger 0.1 2005/06/10 16:01:45 lwh";
  * ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
  * POSSIBILITY OF SUCH DAMAGE.
  *
+ * This is modified, differences from milter-spamd:
+ *
+ *		- Changed the filter to accept all mail and put the Spamassassin flag
+ *			in the header as X-Spam 
+ *		- Made SPAMD_RETRIES a define here, it was 6 before (6*10 seconds) 
+ *		- Added a check to remove any X-Spam-Flag headers
+ *		- Removed IPv6 support
+ *		- Added MAX_MESSAGE_SIZE 
  */
 
+/* Things to set */
+#define USER		"_milter-spamd"
+#define OCONN		"unix:/var/spool/milter-spamd/sock"
+#define PIDFILE	"/var/spool/milter-spamd/pid"
+/* this is x10 seconds */
+#define SPAMD_RETRIES 3
+#define MAX_MESSAGE_SIZE 327680
+/* these are the Spamassassin defaults */
+#define SPAMD_ADDR	"127.0.0.1"
+#define SPAMD_PORT	783
 
 #include <sys/types.h>
 #include <sys/socket.h>
